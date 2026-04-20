@@ -3,6 +3,8 @@
 
   #### Distribución de los módulos funcionales del sistema en cada capa de la arquitectura, mostrando la separación de responsabilidades.
 
+  La tabla presenta la distribución de los módulos del sistema de gestión que organiza los eventos y recursos comunitarios a partir de las capas que conforman la arquitectura, lo que da cuenta de cómo se distribuyen las funcionalidades centrales en el sistema a partir de una suficiente separación de responsabilidades y de una estructura coherente del propio sistema.
+
 
 | Capa                | Módulos asociados                                          |
 | :------------------ | :--------------------------------------------------------- |
