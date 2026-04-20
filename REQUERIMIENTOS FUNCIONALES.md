@@ -1,8 +1,9 @@
-#### TABLA DE REQUERIMIENTOS FUNCIONALES
 
-```http
-  Definición de las funcionalidades principales del sistema como gestión de eventos, reservas, autenticación y participación.
-```
+### TABLA DE REQUERIMIENTOS FUNCIONALES
+
+
+  #### Definición de las funcionalidades principales del sistema como gestión de eventos, reservas, autenticación y participación.
+
 
 | ID        | Requerimiento     | Actor                      | Descripción                 |
 | :-------- | :-------          | :------------------------- | :--------                   |
@@ -16,3 +17,4 @@
 | `RF08` | `Administrar usuarios`          | Administrador |Gestiona roles y cuentas|
 | `RF09` | `Gestionar recursos`          | Administrador |Administra espacios y recursos|
 | `RF010` | `Calificar eventos`          | Ciudadano |Permite valorar eventos|
+
