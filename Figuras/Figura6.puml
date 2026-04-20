@@ -1,0 +1,19 @@
+@startuml
+actor Ciudadano
+actor "Gestor Comunitario" as Gestor
+actor Administrador
+
+rectangle "Sistema" {
+    usecase "Consultar eventos" as UC1
+    usecase "Reservar espacio" as UC2
+    usecase "Crear evento" as UC3
+    usecase "Administrar usuarios" as UC4
+}
+
+Ciudadano --> UC1
+Ciudadano --> UC2
+
+Gestor --> UC3
+
+Administrador --> UC4
+@enduml

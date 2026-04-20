@@ -1,0 +1,31 @@
+@startuml
+package "Capa de Presentación" {
+  [Interfaz de Usuario]
+}
+
+package "Capa de Aplicación" {
+  [API REST]
+}
+
+package "Capa de Negocio" {
+  [Lógica de negocio]
+}
+
+package "Capa de Datos" {
+  [Base de datos]
+}
+
+[Interfaz de Usuario] --> [API REST]
+[API REST] --> [Lógica de negocio]
+[Lógica de negocio] --> [Base de datos]
+
+rectangle "Seguridad (Transversal)" {
+  [Autenticación]
+  [Autorización]
+  [Validación]
+}
+
+[Autenticación] ..> [API REST]
+[Autorización] ..> [Lógica de negocio]
+[Validación] ..> [Base de datos]
+@enduml

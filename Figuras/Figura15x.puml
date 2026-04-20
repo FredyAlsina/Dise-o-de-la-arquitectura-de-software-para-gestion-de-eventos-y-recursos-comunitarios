@@ -1,0 +1,32 @@
+@startuml
+
+component "Interfaz Web/App" as UI
+component "API REST" as API
+component "Gestión de Eventos" as Eventos
+component "Sistema de Reservas" as Reservas
+component "Gestión de Recursos" as Recursos
+component "Satisfacción Ciudadana" as Satisfaccion
+component "Seguridad" as Seguridad
+database "Base de Datos" as BD
+
+' Flujo de comunicación
+UI --> API : Solicitudes HTTP
+API --> Eventos
+API --> Reservas
+
+Eventos --> Reservas
+Reservas --> Recursos
+
+Eventos --> Satisfaccion
+
+Eventos --> BD
+Reservas --> BD
+Recursos --> BD
+Satisfaccion --> BD
+
+' Seguridad transversal
+API --> Seguridad
+Eventos --> Seguridad
+Reservas --> Seguridad
+
+@enduml

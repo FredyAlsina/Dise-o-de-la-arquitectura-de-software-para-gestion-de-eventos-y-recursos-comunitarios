@@ -1,0 +1,33 @@
+@startuml
+
+package "Vista Lógica - Sistema de Gestión Comunitaria" {
+
+  [Gestión de Eventos] as Eventos
+  [Sistema de Reservas] as Reservas
+  [Gestión de Recursos] as Recursos
+  [Gestión de Usuarios] as Usuarios
+  [Satisfacción Ciudadana] as Satisfaccion
+  [Seguridad (Autenticación y Autorización)] as Seguridad
+
+  database "Base de Datos" as BD
+}
+
+' Relaciones principales
+Eventos --> Reservas : Coordina reservas
+Reservas --> Recursos : Consulta disponibilidad
+
+Eventos --> Satisfaccion : Genera evaluación
+Usuarios --> Seguridad : Validación de acceso
+
+Eventos --> BD
+Reservas --> BD
+Recursos --> BD
+Usuarios --> BD
+Satisfaccion --> BD
+
+' Seguridad transversal
+Eventos --> Seguridad
+Reservas --> Seguridad
+Usuarios --> Seguridad
+
+@enduml

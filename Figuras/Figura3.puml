@@ -1,0 +1,44 @@
+@startuml
+
+actor Usuario
+
+rectangle "Interfaz (Web / App)" {
+  Usuario --> UI
+}
+
+rectangle "Sistema de Gestión Comunitaria" {
+
+  rectangle "Módulos principales" {
+    [Gestión de Eventos]
+    [Sistema de Reservas]
+    [Gestión de Recursos]
+    [Satisfacción Ciudadana]
+  }
+
+  rectangle "Servicios" {
+    [Geolocalización]
+    [Autenticación y Seguridad]
+  }
+
+  rectangle "Datos" {
+    [Base de Datos]
+  }
+
+}
+
+UI --> [Gestión de Eventos]
+UI --> [Sistema de Reservas]
+
+[Gestión de Eventos] --> [Sistema de Reservas]
+[Gestión de Eventos] --> [Geolocalización]
+
+[Sistema de Reservas] --> [Gestión de Recursos]
+
+[Gestión de Eventos] --> [Base de Datos]
+[Sistema de Reservas] --> [Base de Datos]
+[Satisfacción Ciudadana] --> [Base de Datos]
+
+[Gestión de Eventos] --> [Autenticación y Seguridad]
+[Sistema de Reservas] --> [Autenticación y Seguridad]
+
+@enduml

@@ -1,0 +1,52 @@
+@startuml
+
+top to bottom direction
+
+package "Capa de Presentación" {
+  [Interfaz Web / App]
+}
+
+package "Capa de Aplicación" {
+  [API REST]
+}
+
+package "Capa de Lógica de Negocio" {
+  [Gestión de Eventos]
+  [Sistema de Reservas]
+  [Gestión de Recursos]
+  [Satisfacción Ciudadana]
+}
+
+package "Capa de Servicios" {
+  [Geolocalización]
+  [Difusión de Eventos]
+}
+
+package "Capa de Datos" {
+  [Base de Datos]
+}
+
+package "Seguridad (Transversal)" {
+  [Autenticación y Autorización]
+}
+
+' Flujo
+[Interfaz Web / App] --> [API REST]
+
+[API REST] --> [Gestión de Eventos]
+[API REST] --> [Sistema de Reservas]
+
+[Gestión de Eventos] --> [Geolocalización]
+[Gestión de Eventos] --> [Difusión de Eventos]
+
+[Sistema de Reservas] --> [Gestión de Recursos]
+
+[Gestión de Eventos] --> [Base de Datos]
+[Sistema de Reservas] --> [Base de Datos]
+[Satisfacción Ciudadana] --> [Base de Datos]
+
+' Seguridad transversal
+[Gestión de Eventos] --> [Autenticación y Autorización]
+[Sistema de Reservas] --> [Autenticación y Autorización]
+
+@enduml

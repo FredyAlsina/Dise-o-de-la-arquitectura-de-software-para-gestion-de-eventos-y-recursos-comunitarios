@@ -1,0 +1,38 @@
+@startuml
+
+node "Cliente (Web / App)" {
+  component "Interfaz de Usuario"
+}
+
+node "Servidor de Aplicación" {
+  component "API REST"
+  component "Módulo de Eventos"
+  component "Módulo de Reservas"
+  component "Módulo de Recursos"
+  component "Módulo de Satisfacción"
+  component "Seguridad"
+}
+
+node "Servidor de Base de Datos" {
+  database "Base de Datos"
+}
+
+cloud "Servicios Externos" {
+  component "Geolocalización"
+  component "Difusión / Notificaciones"
+}
+
+' Conexiones
+"Interfaz de Usuario" --> "API REST"
+"API REST" --> "Módulo de Eventos"
+"API REST" --> "Módulo de Reservas"
+
+"Módulo de Eventos" --> "Base de Datos"
+"Módulo de Reservas" --> "Base de Datos"
+"Módulo de Recursos" --> "Base de Datos"
+"Módulo de Satisfacción" --> "Base de Datos"
+
+"Módulo de Eventos" --> "Geolocalización"
+"Módulo de Eventos" --> "Difusión / Notificaciones"
+
+@enduml

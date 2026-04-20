@@ -1,0 +1,43 @@
+@startuml
+
+skinparam componentStyle rectangle
+
+package "Arquitectura del Sistema" {
+
+  [Capa de Presentación] as UI
+  [Capa de Aplicación] as API
+  [Lógica de Negocio] as LN
+  [Capa de Datos] as BD
+
+}
+
+package "Atributos de Calidad" {
+
+  cloud "Seguridad" as Seg
+  cloud "Escalabilidad" as Esc
+  cloud "Disponibilidad" as Disp
+  cloud "Mantenibilidad" as Mant
+  cloud "Interoperabilidad" as Inter
+
+}
+
+' Flujo principal
+UI --> API
+API --> LN
+LN --> BD
+
+' Relación atributos con capas
+Seg --> API
+Seg --> LN
+
+Esc --> API
+Esc --> LN
+
+Disp --> API
+Disp --> BD
+
+Mant --> LN
+
+Inter --> API
+
+@enduml
